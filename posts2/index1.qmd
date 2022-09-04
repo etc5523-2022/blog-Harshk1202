@@ -6,6 +6,9 @@ categories: [statistics]
 image: "image.jpg"
 ---
 
+## INTRODUCTION
+
+##### The blog is about the Dairy production and consumption statistics from year 1975 to 2017 in United States of America. In this blog, I have used some tools find out the top milk producing states in United States. Also, using the data, I have tried to analyse liquid milk production and consumption statistics from 1975 to 2017 and tried to find out the percentage of liquid milk produced which is used in manufacturing other dairy products.
 
 ## AIMS
 
