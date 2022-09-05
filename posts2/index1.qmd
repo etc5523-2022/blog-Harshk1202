@@ -8,7 +8,7 @@ image: "image.jpg"
 
 ## INTRODUCTION
 
-##### The blog is about the Dairy production and consumption statistics from year 1975 to 2017 in United States of America. In this blog, I have used some tools find out the top milk producing states in United States. Also, using the data, I have tried to analyse liquid milk production and consumption statistics from 1975 to 2017 and tried to find out the percentage of liquid milk produced which is used in manufacturing other dairy products.
+The blog is about the `Dairy production and consumption statistics` from year 1975 to 2017 in United States of America. In this blog, I have used some tools find out the top milk producing states in United States. Also, using the data, I have tried to analyse liquid milk production and consumption statistics from 1975 to 2017 and tried to find out the percentage of liquid milk produced which is used in manufacturing other dairy products.
 
 ## DATA DESCRIPTION
 
@@ -26,9 +26,9 @@ mydata3 <- read_csv(url("https://raw.githubusercontent.com/rfordatascience/tidyt
 
 ```
 
-#### The data source is from USDA (United States Department of Agriculture) and the datasets can be found on this [link](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-01-29).
+The data source is from USDA (United States Department of Agriculture) and the datasets can be found on this [link](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-01-29).
 
-#### The data is about milk production and liquid milk sales/consumption in United States from 1970 to 2017.
+The data is about milk production and liquid milk sales/consumption in United States from 1970 to 2017.
 
 #### Variable description is as follows:- 
 
@@ -73,7 +73,11 @@ and, calculate what percentage of milk is used in manufacturing other dairy prod
 
 ## Top 10 states in USA with highest average milk production each year in the last five years(according to the data given, i.e. 2013 to 2017).
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r fig-plot, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Top 10 states of United States with highest milk production in the last five years i.e. 2013-2017"}
+
+#| label: fig-plot
+#| fig-cap: "Top 10 states of United States with highest milk production in the last five years i.e. 2013-2017"
+
 analysis1 <- mydata1 %>% 
   filter(year %in% c(2013:2017)) %>%
   arrange(desc(milk_produced)) %>%
@@ -96,7 +100,11 @@ ggplotly(p1)
 
 ## Total milk production, total fluid milk consumption/sale and percentage of milk used to make other dairy products each year from 1975 to 2017.
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r tbl-percentage, echo=FALSE, message=FALSE, warning=FALSE}
+
+#| label: Table
+#| tbl-cap: "Percentage of produced milk used for manufacturing other dairy products"
+
 mydata4 <- mydata1 %>%
   filter(year %in% c(1975:2017)) %>%
   group_by(year) %>%
@@ -109,7 +117,7 @@ mydata5 <- mydata3 %>%
 analysis2 <- full_join(mydata4, mydata5, by = "year") %>%
   mutate("Milk Percentage for other dairy products" = round(((Total_milk_production - Total_fluidmilk_sale)/Total_milk_production)*100, 2)) %>%                   rename("Milk Production (million lbs)" = Total_milk_production,
          "Fluid Milk Sale/Consumption (million lbs)" = Total_fluidmilk_sale) %>%
-  kable(align = "c") %>%
+  kable(caption = "Percentage of produced milk used for manufacturing other dairy products") %>%
   kable_styling(full_width = F, 
                 bootstrap_options = c("striped", "condensed", "bordered"))
 
@@ -118,5 +126,21 @@ analysis2
 ```
 ## CONCLUSION
 
-##### From the above table, we can see that the consumption of fluid milk is decreasing each year and percentage of milk for manufacturing other milk produced is increasing. Therefore, we can conclude that gradually, over the years, people have started preferring solid milk products over fluid milk.
+@fig-plot is showing the top 10 states of United States with highest milk production.
 
+From the above @tbl-percentage, we can see that the consumption of fluid milk is decreasing each year and percentage of milk for manufacturing other milk produced is increasing. Therefore, we can conclude that gradually, over the years, people have started preferring solid milk products over fluid milk.
+
+## REFERENCES
+
+- The Data can be found on this [link](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-01-29).
+
+tidytuesday/data/2019/2019-01-29 at master · rfordatascience/tidytuesday. (n.d.). Retrieved September 5, 2022, from GitHub website: https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-01-29
+
+- Keto and Low-Carb Dairy: The Best and the Worst. (n.d.). Diet Doctor. https://www.dietdoctor.com/low-carb/dairy
+
+- Wickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
+
+- C. Sievert. Interactive Web-Based Data Visualization with R, plotly, and shiny. Chapman and Hall/CRC Florida, 2020.
+
+-  Zhu H (2021). _kableExtra: Construct Complex Table with 'kable' and Pipe Syntax_. R package version 1.3.4,
+  <https://CRAN.R-project.org/package=kableExtra>.
