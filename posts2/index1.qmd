@@ -10,14 +10,7 @@ image: "image.jpg"
 
 ##### The blog is about the Dairy production and consumption statistics from year 1975 to 2017 in United States of America. In this blog, I have used some tools find out the top milk producing states in United States. Also, using the data, I have tried to analyse liquid milk production and consumption statistics from 1975 to 2017 and tried to find out the percentage of liquid milk produced which is used in manufacturing other dairy products.
 
-## AIMS
-
-- To show top 10 states in USA with highest milk production each year in the last five years(according to the data given, i.e. 2013 to 2017).
-- To find out the total milk production each year from 1970 to 2017 and make comparison between the total milk produced and total fluid milk consumed.
-and, calculate what percentage of milk is used in manufacturing other dairy products.
-
-
-## ANALYSIS
+## DATA DESCRIPTION
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -32,6 +25,50 @@ mydata1 <- read_csv(url("https://raw.githubusercontent.com/rfordatascience/tidyt
 mydata3 <- read_csv(url("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2019/2019-01-29/fluid_milk_sales.csv"))
 
 ```
+
+#### The data source is from USDA (United States Department of Agriculture) and the datasets can be found on this [link](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-01-29).
+
+#### The data is about milk production and liquid milk sales/consumption in United States from 1970 to 2017.
+
+#### Variable description is as follows:- 
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+tibble(
+  "Variable" = colnames(mydata1),
+  "Class" = c("character", "character", "number", "number"),
+  "Description" = c("Region of United States",
+                    "State name of United States",
+                    "Year", 
+                    "Quantity of milk produced in pounds")
+                    
+  ) %>%
+   kable(align = "c") %>%
+  kable_styling(full_width = F, 
+                bootstrap_options = c("striped", "condensed", "bordered"))
+
+tibble(
+  "Variable" = colnames(mydata3),
+  "Class" = c("number", "character", "number"),
+  "Description" = c("Year",
+                    "Type of milk",
+                    "Sale/Consumption of milk in pounds")
+                    
+  ) %>%
+ kable(align = "c") %>%
+  kable_styling(full_width = F, 
+                bootstrap_options = c("striped", "condensed", "bordered"))
+  
+```
+
+
+## AIMS
+
+- To show top 10 states in USA with highest milk production each year in the last five years(according to the data given, i.e. 2013 to 2017).
+- To find out the total milk production each year from 1970 to 2017 and make comparison between the total milk produced and total fluid milk consumed.
+and, calculate what percentage of milk is used in manufacturing other dairy products.
+
+
+## ANALYSIS
 
 
 ## Top 10 states in USA with highest average milk production each year in the last five years(according to the data given, i.e. 2013 to 2017).
@@ -70,7 +107,7 @@ mydata5 <- mydata3 %>%
   summarise(Total_fluidmilk_sale = (sum(pounds))/1000000)
 
 analysis2 <- full_join(mydata4, mydata5, by = "year") %>%
-  mutate("Milk Percentage for other dairy products" = ((Total_milk_production - Total_fluidmilk_sale)/Total_milk_production)*100) %>%                   rename("Milk Production (million lbs)" = Total_milk_production,
+  mutate("Milk Percentage for other dairy products" = round(((Total_milk_production - Total_fluidmilk_sale)/Total_milk_production)*100, 2)) %>%                   rename("Milk Production (million lbs)" = Total_milk_production,
          "Fluid Milk Sale/Consumption (million lbs)" = Total_fluidmilk_sale) %>%
   kable(align = "c") %>%
   kable_styling(full_width = F, 
@@ -79,6 +116,7 @@ analysis2 <- full_join(mydata4, mydata5, by = "year") %>%
 analysis2
 
 ```
+## CONCLUSION
 
 ##### From the above table, we can see that the consumption of fluid milk is decreasing each year and percentage of milk for manufacturing other milk produced is increasing. Therefore, we can conclude that gradually, over the years, people have started preferring solid milk products over fluid milk.
 
