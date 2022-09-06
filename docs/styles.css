@@ -1,0 +1,24 @@
+/* css styles */
+.navbar-dark, .quarto-title-banner {
+  background-color: darkblue;
+}
+
+
+h3 {
+  font-size: 1.7em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+h1 {
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.7em;
+  font-weight: bold;
+  font-style: italic;
+}
+
+

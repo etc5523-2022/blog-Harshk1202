@@ -1,0 +1,163 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ETC5523 Blog Assessment",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nstatistics\n\n\n\n\n\n\n\n\n\n\n\nSep 4, 2022\n\n\nHarsh Katiyar\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This is a blog for Dairy Production and Consumption statistical analysis by Harsh Katiyar,student at Monash University."
+  },
+  {
+    "objectID": "posts/week01/index.html",
+    "href": "posts/week01/index.html",
+    "title": "Basic communication theory and practice",
+    "section": "",
+    "text": "Basic communication theory and its relevancy with communicating with data\nDemonstrate communication competency by selecting appropriate behaviour based on audience and self monitoring\nIdentify and apply rhetorical elements to improve data storytelling\nClearly articulate and express technical problems for others to help you"
+  },
+  {
+    "objectID": "posts/week01/index.html#slides",
+    "href": "posts/week01/index.html#slides",
+    "title": "Basic communication theory and practice",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "posts/week02/index.html",
+    "href": "posts/week02/index.html",
+    "title": "Introduction to web technologies",
+    "section": "",
+    "text": "Understand the make up of web documents, i.e. HTML, CSS and JS\nWrite basic HTML and CSS with valid syntax\nUse CSS selectors to apply new styles\nIntegrate CSS and JS to R markdown documents with HTML output"
+  },
+  {
+    "objectID": "posts/week02/index.html#slides",
+    "href": "posts/week02/index.html#slides",
+    "title": "Introduction to web technologies",
+    "section": "Slides",
+    "text": "Slides"
+  },
+  {
+    "objectID": "posts/week03/index.html",
+    "href": "posts/week03/index.html",
+    "title": "Communicating data with interactive web apps",
+    "section": "",
+    "text": "Use interactivity to enable data exploration, understanding and communication\nDesign web apps with displays that fit for the purpose\nMake web applications using shiny"
+  },
+  {
+    "objectID": "posts/week03/index.html#analysis",
+    "href": "posts/week03/index.html#analysis",
+    "title": "Communicating data with interactive web apps",
+    "section": "Analysis",
+    "text": "Analysis\n\nlibrary(tidyverse)\nlibrary(tidycovid19)\ndf <- download_merged_data(cached = TRUE, silent = TRUE)\n\n\ng <- df %>% \n  filter(country == \"Australia\") %>% \n  mutate(cases_new = diff(c(0, confirmed))) %>% \n  filter(between(date, as.Date(\"2022-03-01\"), as.Date(\"2022-08-30\"))) %>% \n  ggplot(aes(date, cases_new)) +\n  geom_line() +\n  labs(x = \"Date\", y = \"New COVID-19 Cases\",\n       title = \"Australia\") +\n  theme_classic(base_size = 14)\n\nplotly::ggplotly(g)"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog Template",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!"
+  },
+  {
+    "objectID": "posts2/index.html",
+    "href": "posts2/index.html",
+    "title": "DAIRY PRODUCTION AND CONSUMPTION STATISTICS",
+    "section": "",
+    "text": "To show top 10 states in USA with highest milk production each year in the last five years(according to the data given, i.e. 2013 to 2017).\nTo find out the total milk production each year from 1970 to 2017 and make comparison between the total milk produced and total fluid milk consumed. and, calculate what percentage of milk is used in manufacturing other dairy products."
+  },
+  {
+    "objectID": "posts2/index.html#analysis",
+    "href": "posts2/index.html#analysis",
+    "title": "DAIRY PRODUCTION AND CONSUMPTION STATISTICS",
+    "section": "ANALYSIS",
+    "text": "ANALYSIS"
+  },
+  {
+    "objectID": "posts2/index.html#top-10-states-in-usa-with-highest-average-milk-production-each-year-in-the-last-five-yearsaccording-to-the-data-given-i.e.-2013-to-2017.",
+    "href": "posts2/index.html#top-10-states-in-usa-with-highest-average-milk-production-each-year-in-the-last-five-yearsaccording-to-the-data-given-i.e.-2013-to-2017.",
+    "title": "DAIRY PRODUCTION AND CONSUMPTION STATISTICS",
+    "section": "Top 10 states in USA with highest average milk production each year in the last five years(according to the data given, i.e. 2013 to 2017).",
+    "text": "Top 10 states in USA with highest average milk production each year in the last five years(according to the data given, i.e. 2013 to 2017)."
+  },
+  {
+    "objectID": "posts2/index.html#total-milk-production-total-fluid-milk-consumptionsale-and-percentage-of-milk-used-to-make-other-dairy-products-each-year-from-1975-to-2017.",
+    "href": "posts2/index.html#total-milk-production-total-fluid-milk-consumptionsale-and-percentage-of-milk-used-to-make-other-dairy-products-each-year-from-1975-to-2017.",
+    "title": "DAIRY PRODUCTION AND CONSUMPTION STATISTICS",
+    "section": "Total milk production, total fluid milk consumption/sale and percentage of milk used to make other dairy products each year from 1975 to 2017.",
+    "text": "Total milk production, total fluid milk consumption/sale and percentage of milk used to make other dairy products each year from 1975 to 2017.\n\n\n\n\n \n  \n    year \n    Milk Production (million lbs) \n    Fluid Milk Sale/Consumption (million lbs) \n    Milk Percentage for other dairy products \n  \n \n\n  \n    1975 \n    115398 \n    106616.00 \n    7.610184 \n  \n  \n    1976 \n    120180 \n    107286.00 \n    10.728907 \n  \n  \n    1977 \n    122654 \n    107376.00 \n    12.456178 \n  \n  \n    1978 \n    121461 \n    107122.00 \n    11.805435 \n  \n  \n    1979 \n    123351 \n    107050.00 \n    13.215134 \n  \n  \n    1980 \n    128406 \n    106202.00 \n    17.292027 \n  \n  \n    1981 \n    132770 \n    105598.00 \n    20.465467 \n  \n  \n    1982 \n    135505 \n    103768.00 \n    23.421276 \n  \n  \n    1983 \n    139588 \n    104448.00 \n    25.174084 \n  \n  \n    1984 \n    135352 \n    105814.00 \n    21.823098 \n  \n  \n    1985 \n    143012 \n    108120.00 \n    24.397953 \n  \n  \n    1986 \n    143125 \n    108686.00 \n    24.062183 \n  \n  \n    1987 \n    142709 \n    108084.00 \n    24.262660 \n  \n  \n    1988 \n    145034 \n    108930.00 \n    24.893473 \n  \n  \n    1989 \n    143893 \n    109976.00 \n    23.570987 \n  \n  \n    1990 \n    147721 \n    109788.00 \n    25.678813 \n  \n  \n    1991 \n    147696 \n    110330.00 \n    25.299263 \n  \n  \n    1992 \n    150884 \n    110270.00 \n    26.917367 \n  \n  \n    1993 \n    150637 \n    108964.00 \n    27.664518 \n  \n  \n    1994 \n    153602 \n    109568.00 \n    28.667596 \n  \n  \n    1995 \n    155293 \n    109384.00 \n    29.562826 \n  \n  \n    1996 \n    154006 \n    110262.00 \n    28.404088 \n  \n  \n    1997 \n    156091 \n    109768.00 \n    29.676919 \n  \n  \n    1998 \n    157261 \n    109236.00 \n    30.538404 \n  \n  \n    1999 \n    162590 \n    110032.00 \n    32.325481 \n  \n  \n    2000 \n    167392 \n    110976.29 \n    33.702753 \n  \n  \n    2001 \n    165331 \n    110026.76 \n    33.450616 \n  \n  \n    2002 \n    170063 \n    110399.94 \n    35.082913 \n  \n  \n    2003 \n    170349 \n    109861.55 \n    35.507959 \n  \n  \n    2004 \n    170832 \n    109217.02 \n    36.067586 \n  \n  \n    2005 \n    176932 \n    109603.01 \n    38.053599 \n  \n  \n    2006 \n    181782 \n    109743.55 \n    39.629036 \n  \n  \n    2007 \n    185655 \n    109421.44 \n    41.061949 \n  \n  \n    2008 \n    189979 \n    109028.66 \n    42.610152 \n  \n  \n    2009 \n    189202 \n    109611.13 \n    42.066610 \n  \n  \n    2010 \n    192876 \n    109934.30 \n    43.002604 \n  \n  \n    2011 \n    196256 \n    108558.53 \n    44.685244 \n  \n  \n    2012 \n    200642 \n    106844.85 \n    46.748510 \n  \n  \n    2013 \n    201230 \n    104532.86 \n    48.053043 \n  \n  \n    2014 \n    206056 \n    101498.35 \n    50.742346 \n  \n  \n    2015 \n    208597 \n    100031.71 \n    52.045470 \n  \n  \n    2016 \n    212406 \n    99343.42 \n    53.229468 \n  \n  \n    2017 \n    215466 \n    97209.79 \n    54.883930"
+  },
+  {
+    "objectID": "posts2/index.html#coclusion",
+    "href": "posts2/index.html#coclusion",
+    "title": "DAIRY PRODUCTION AND CONSUMPTION STATISTICS",
+    "section": "COCLUSION",
+    "text": "COCLUSION\nFrom the above table, we can see that the consumption of fluid milk is decreasing each year and percentage of milk for manufacturing other milk produced is increasing. Therefore, we can conclude that gradually, over the years, people have started preferring solid milk products over fluid milk."
+  },
+  {
+    "objectID": "posts2/index.html#conclusion",
+    "href": "posts2/index.html#conclusion",
+    "title": "DAIRY PRODUCTION AND CONSUMPTION STATISTICS",
+    "section": "CONCLUSION",
+    "text": "CONCLUSION\nFrom the above table, we can see that the consumption of fluid milk is decreasing each year and percentage of milk for manufacturing other milk produced is increasing. Therefore, we can conclude that gradually, over the years, people have started preferring solid milk products over fluid milk."
+  },
+  {
+    "objectID": "posts2/index1.html",
+    "href": "posts2/index1.html",
+    "title": "DAIRY PRODUCTION AND CONSUMPTION STATISTICS",
+    "section": "",
+    "text": "The blog is about the Dairy production and consumption statistics from year 1975 to 2017 in United States of America. In this blog, I have used some tools find out the top milk producing states in United States. Also, using the data, I have tried to analyse liquid milk production and consumption statistics from 1975 to 2017 and tried to find out the percentage of liquid milk produced which is used in manufacturing other dairy products."
+  },
+  {
+    "objectID": "posts2/index1.html#analysis",
+    "href": "posts2/index1.html#analysis",
+    "title": "DAIRY PRODUCTION AND CONSUMPTION STATISTICS",
+    "section": "ANALYSIS",
+    "text": "ANALYSIS"
+  },
+  {
+    "objectID": "posts2/index1.html#top-10-states-in-usa-with-highest-average-milk-production-each-year-in-the-last-five-yearsaccording-to-the-data-given-i.e.-2013-to-2017.",
+    "href": "posts2/index1.html#top-10-states-in-usa-with-highest-average-milk-production-each-year-in-the-last-five-yearsaccording-to-the-data-given-i.e.-2013-to-2017.",
+    "title": "DAIRY PRODUCTION AND CONSUMPTION STATISTICS",
+    "section": "Top 10 states in USA with highest average milk production each year in the last five years(according to the data given, i.e. 2013 to 2017).",
+    "text": "Top 10 states in USA with highest average milk production each year in the last five years(according to the data given, i.e. 2013 to 2017).\n\n\n\n\n\nFigure 1: Top 10 states of United States with highest milk production in the last five years i.e. 2013-2017"
+  },
+  {
+    "objectID": "posts2/index1.html#total-milk-production-total-fluid-milk-consumptionsale-and-percentage-of-milk-used-to-make-other-dairy-products-each-year-from-1975-to-2017.",
+    "href": "posts2/index1.html#total-milk-production-total-fluid-milk-consumptionsale-and-percentage-of-milk-used-to-make-other-dairy-products-each-year-from-1975-to-2017.",
+    "title": "DAIRY PRODUCTION AND CONSUMPTION STATISTICS",
+    "section": "Total milk production, total fluid milk consumption/sale and percentage of milk used to make other dairy products each year from 1975 to 2017.",
+    "text": "Total milk production, total fluid milk consumption/sale and percentage of milk used to make other dairy products each year from 1975 to 2017.\n\n\nTable 1: ?(caption)\n\n\n\n\n\n(a) Percentage of produced milk used for manufacturing other dairy products\n \n  \n    year \n    Milk Production (million lbs) \n    Fluid Milk Sale/Consumption (million lbs) \n    Milk Percentage for other dairy products \n  \n \n\n  \n    1975 \n    115398 \n    106616.00 \n    7.61 \n  \n  \n    1976 \n    120180 \n    107286.00 \n    10.73 \n  \n  \n    1977 \n    122654 \n    107376.00 \n    12.46 \n  \n  \n    1978 \n    121461 \n    107122.00 \n    11.81 \n  \n  \n    1979 \n    123351 \n    107050.00 \n    13.22 \n  \n  \n    1980 \n    128406 \n    106202.00 \n    17.29 \n  \n  \n    1981 \n    132770 \n    105598.00 \n    20.47 \n  \n  \n    1982 \n    135505 \n    103768.00 \n    23.42 \n  \n  \n    1983 \n    139588 \n    104448.00 \n    25.17 \n  \n  \n    1984 \n    135352 \n    105814.00 \n    21.82 \n  \n  \n    1985 \n    143012 \n    108120.00 \n    24.40 \n  \n  \n    1986 \n    143125 \n    108686.00 \n    24.06 \n  \n  \n    1987 \n    142709 \n    108084.00 \n    24.26 \n  \n  \n    1988 \n    145034 \n    108930.00 \n    24.89 \n  \n  \n    1989 \n    143893 \n    109976.00 \n    23.57 \n  \n  \n    1990 \n    147721 \n    109788.00 \n    25.68 \n  \n  \n    1991 \n    147696 \n    110330.00 \n    25.30 \n  \n  \n    1992 \n    150884 \n    110270.00 \n    26.92 \n  \n  \n    1993 \n    150637 \n    108964.00 \n    27.66 \n  \n  \n    1994 \n    153602 \n    109568.00 \n    28.67 \n  \n  \n    1995 \n    155293 \n    109384.00 \n    29.56 \n  \n  \n    1996 \n    154006 \n    110262.00 \n    28.40 \n  \n  \n    1997 \n    156091 \n    109768.00 \n    29.68 \n  \n  \n    1998 \n    157261 \n    109236.00 \n    30.54 \n  \n  \n    1999 \n    162590 \n    110032.00 \n    32.33 \n  \n  \n    2000 \n    167392 \n    110976.29 \n    33.70 \n  \n  \n    2001 \n    165331 \n    110026.76 \n    33.45 \n  \n  \n    2002 \n    170063 \n    110399.94 \n    35.08 \n  \n  \n    2003 \n    170349 \n    109861.55 \n    35.51 \n  \n  \n    2004 \n    170832 \n    109217.02 \n    36.07 \n  \n  \n    2005 \n    176932 \n    109603.01 \n    38.05 \n  \n  \n    2006 \n    181782 \n    109743.55 \n    39.63 \n  \n  \n    2007 \n    185655 \n    109421.44 \n    41.06 \n  \n  \n    2008 \n    189979 \n    109028.66 \n    42.61 \n  \n  \n    2009 \n    189202 \n    109611.13 \n    42.07 \n  \n  \n    2010 \n    192876 \n    109934.30 \n    43.00 \n  \n  \n    2011 \n    196256 \n    108558.53 \n    44.69 \n  \n  \n    2012 \n    200642 \n    106844.85 \n    46.75 \n  \n  \n    2013 \n    201230 \n    104532.86 \n    48.05 \n  \n  \n    2014 \n    206056 \n    101498.35 \n    50.74 \n  \n  \n    2015 \n    208597 \n    100031.71 \n    52.05 \n  \n  \n    2016 \n    212406 \n    99343.42 \n    53.23 \n  \n  \n    2017 \n    215466 \n    97209.79 \n    54.88"
+  },
+  {
+    "objectID": "posts2/index1.html#conclusion",
+    "href": "posts2/index1.html#conclusion",
+    "title": "DAIRY PRODUCTION AND CONSUMPTION STATISTICS",
+    "section": "CONCLUSION",
+    "text": "CONCLUSION\nFigure 1 is showing the top 10 states of United States with highest milk production.\nFrom the above Table 1, we can see that the consumption of fluid milk is decreasing each year and percentage of milk for manufacturing other milk produced is increasing. Therefore, we can conclude that gradually, over the years, people have started preferring solid milk products over fluid milk."
+  },
+  {
+    "objectID": "posts2/index1.html#aims",
+    "href": "posts2/index1.html#aims",
+    "title": "DAIRY PRODUCTION AND CONSUMPTION STATISTICS",
+    "section": "AIMS",
+    "text": "AIMS\n\nTo show top 10 states in USA with highest milk production each year in the last five years(according to the data given, i.e. 2013 to 2017).\nTo find out the total milk production each year from 1970 to 2017 and make comparison between the total milk produced and total fluid milk consumed.\nand, calculate what percentage of milk is used in manufacturing other dairy products."
+  },
+  {
+    "objectID": "posts2/index1.html#data-description",
+    "href": "posts2/index1.html#data-description",
+    "title": "DAIRY PRODUCTION AND CONSUMPTION STATISTICS",
+    "section": "DATA DESCRIPTION",
+    "text": "DATA DESCRIPTION\n\n\n\n\n\n\nThe data source is from USDA (United States Department of Agriculture) and the datasets can be found on this link.\nThe data is about milk production and liquid milk sales/consumption in United States from 1970 to 2017.\n\nVariable description is as follows:-\n\n\n\n\n \n  \n    Variable \n    Class \n    Description \n  \n \n\n  \n    region \n    character \n    Region of United States \n  \n  \n    state \n    character \n    State name of United States \n  \n  \n    year \n    number \n    Year \n  \n  \n    milk_produced \n    number \n    Quantity of milk produced in pounds \n  \n\n\n\n\n\n\n\n \n  \n    Variable \n    Class \n    Description \n  \n \n\n  \n    year \n    number \n    Year \n  \n  \n    milk_type \n    character \n    Type of milk \n  \n  \n    pounds \n    number \n    Sale/Consumption of milk in pounds"
+  },
+  {
+    "objectID": "posts2/index1.html#references",
+    "href": "posts2/index1.html#references",
+    "title": "DAIRY PRODUCTION AND CONSUMPTION STATISTICS",
+    "section": "REFERENCES",
+    "text": "REFERENCES\n\nThe Data can be found on this link.\n\ntidytuesday/data/2019/2019-01-29 at master · rfordatascience/tidytuesday. (n.d.). Retrieved September 5, 2022, from GitHub website: https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-01-29\n\nKeto and Low-Carb Dairy: The Best and the Worst. (n.d.). Diet Doctor. https://www.dietdoctor.com/low-carb/dairy\nWickham et al., (2019). Welcome to the tidyverse. Journal of Open Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686\nC. Sievert. Interactive Web-Based Data Visualization with R, plotly, and shiny. Chapman and Hall/CRC Florida, 2020.\nZhu H (2021). kableExtra: Construct Complex Table with ‘kable’ and Pipe Syntax. R package version 1.3.4, https://CRAN.R-project.org/package=kableExtra.\nMonash University | Australia. (2019, January 26). Orkans. https://orkans.com/monash-university-australia/"
+  }
+]
