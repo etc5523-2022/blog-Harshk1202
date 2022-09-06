@@ -7,7 +7,10 @@ about:
     - icon: github
       text: Github
       href: https://github.com/Harshk1202
+    - icon: linkedin
+      text: linkedin
+      href: https://www.linkedin.com/in/harsh-katiyar-796aab179/
 
 ---
 
-This is a blog for Dairy Production and Consumption statistical analysis by Harsh Katiyar.
+This is a blog for Dairy Production and Consumption statistical analysis by Harsh Katiyar,student at Monash University.

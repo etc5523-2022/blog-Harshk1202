@@ -8,6 +8,8 @@ website:
       - about.qmd
       - icon: github
         href: https://github.com/Harshk1202
+      - icon: linkedin
+        href: https://www.linkedin.com/in/harsh-katiyar-796aab179/
 format:
   html:
     theme: superhero
